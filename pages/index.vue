@@ -3,20 +3,20 @@
     <h1>loading...</h1>
   </div>
   <div v-else class="container">
-    <NowplayingMovies/>
-    <UpcomingMovies/>
-    <PopularMovies/>
-    <TopRatedMovies/>
+    <NowplayingMovies />
+    <UpcomingMovies />
+    <PopularMovies />
+    <TopRatedMovies />
   </div>
 </template>
 
 <script>
 export default {
-  data: function() {
+  data: function () {
     return {
       isVisible: true,
-    }
-  }
+    };
+  },
 };
 </script>
 
