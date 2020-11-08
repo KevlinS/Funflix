@@ -1,6 +1,6 @@
 <template>
   <div class="toprated_movies">
-    <h1>TOP RATEDD</h1>
+    <h1>TOP RATED</h1>
     <li v-for="movie in moviesList" :key="movie.id">
       <p>{{ movie.original_title }}</p>
       <img :src="imgURL + movie.poster_path" />
