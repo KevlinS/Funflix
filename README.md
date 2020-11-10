@@ -1,5 +1,5 @@
 # Funflix
-
+SUSANTO Kevlin / M1 DEVWEB
 ## Build Setup
 
 ```bash
