@@ -4,16 +4,13 @@
       <input type="text" name="searchValue" v-model="searchValue">
       
       <h2>Results</h2>
-      <ul>
-     
-      
-        <li v-for="movie in filteredMovie" :key="movie.id">
+      <ul>    
+        <li v-for="movie in moviesList" :key="movie.id">
           <NuxtLink :to="{name: 'MovieDetail', params: { id:movie.id } }" >
           <p>{{movie.id}}</p>
           <p>{{movie.original_title}}</p>
           <img :src="imgURL + movie.poster_path" />
           </NuxtLink>
-          
         </li>
       </ul>
     </div>
@@ -42,12 +39,9 @@ export default {
   computed: {
     
     filteredMovie: function() {
-      if(this.searchValue.length > 1){
       let filter = new RegExp(this.searchValue, 'i');
       return this.moviesList.filter(movie=>movie.original_title.match(filter));
       console.log(moviesList)
-      }
-      
     }
   },
   
