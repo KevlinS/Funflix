@@ -5,9 +5,15 @@
       
       <h2>Results</h2>
       <ul>
+     
+      
         <li v-for="movie in filteredMovie" :key="movie.id">
+          <NuxtLink :to="{name: 'MovieDetail', params: { id:movie.id } }" >
           <p>{{movie.id}}</p>
           <p>{{movie.original_title}}</p>
+          <img :src="imgURL + movie.poster_path" />
+          </NuxtLink>
+          
         </li>
       </ul>
     </div>
@@ -26,23 +32,39 @@ export default {
   data: function () {
     return {
       moviesList: [],
-      searchValue: ""
+      searchValue: "",
+      imgURL: "https://image.tmdb.org/t/p/w92"
     };
   },
-  beforeUpdate() {
-    fetch('https://api.themoviedb.org/3/search/movie?api_key=9dcb183679039b039c527c347b054639&query='+this.searchValue)
+   methods: {
+      
+  },
+  computed: {
+    
+    filteredMovie: function() {
+      if(this.searchValue.length > 1){
+      let filter = new RegExp(this.searchValue, 'i');
+      return this.moviesList.filter(movie=>movie.original_title.match(filter));
+      console.log(moviesList)
+      }
+      
+    }
+  },
+  
+  updated() {
+    fetch(`https://api.themoviedb.org/3/search/movie?api_key=9dcb183679039b039c527c347b054639&query=${this.searchValue}`)
     .then(res => res.json())
     .then((res) => {
     this.moviesList = res.results;
     }).catch(err=> console.log(err))
   },
-  computed: {
-    filteredMovie: function() {
-      let filter = new RegExp(this.searchValue, 'i');
-      return this.moviesList.filter(movie=>movie.original_title.match(filter));
-      console.log(moviesList)
+  watch: {
+    searchValue: function(newValue, oldValue) {
+      console.log("newVamie", newValue);
+      console.log("oldValue", oldValue);
     }
   },
+
   mixins: [ApiMovies]
 };
 </script>
