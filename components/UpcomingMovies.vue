@@ -2,15 +2,16 @@
   <div class="upcoming_movies">
     <h1>UPCOMING</h1>
     <li v-for="movie in moviesList" :key="movie.id">
+      <NuxtLink :to="{name: 'MovieDetail', params: { id:movie.id } }" >
       <p>{{ movie.original_title }}</p>
       <img :src="imgURL + movie.poster_path" />
+      </NuxtLink>
     </li>
   </div>
 </template>
 
 <script>
 import ApiMovies from "../mixins/ApiMovies";
-import mixins from "../mixins/ApiMovies";
 
 export default {
   data: function () {

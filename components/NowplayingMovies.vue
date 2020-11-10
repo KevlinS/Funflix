@@ -6,7 +6,7 @@
       <NuxtLink :to="{name: 'MovieDetail', params: { id:movie.id } }" >
       <p>{{ movie.original_title }}</p>
       <img :src="imgURL + movie.poster_path" />
-       </NuxtLink>
+      </NuxtLink>
     </li>
    
   </div>

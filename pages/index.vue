@@ -1,8 +1,16 @@
 <template>
-  <div v-if="!isVisible" class="container">
-    <h1>loading...</h1>
-  </div>
-  <div v-else class="container">
+  <div class="container">
+    <div class="search_movie">
+      <input type="text" name="searchValue" v-model="searchValue">
+      
+      <h2>Results</h2>
+      <ul>
+        <li v-for="movie in filteredMovie" :key="movie.id">
+          <p>{{movie.id}}</p>
+          <p>{{movie.original_title}}</p>
+        </li>
+      </ul>
+    </div>
     <NowplayingMovies />
     <UpcomingMovies />
     <PopularMovies />
@@ -11,12 +19,31 @@
 </template>
 
 <script>
+import ApiMovies from "../mixins/ApiMovies";
+
+
 export default {
   data: function () {
     return {
-      isVisible: true,
+      moviesList: [],
+      searchValue: ""
     };
   },
+  beforeUpdate() {
+    fetch('https://api.themoviedb.org/3/search/movie?api_key=9dcb183679039b039c527c347b054639&query='+this.searchValue)
+    .then(res => res.json())
+    .then((res) => {
+    this.moviesList = res.results;
+    }).catch(err=> console.log(err))
+  },
+  computed: {
+    filteredMovie: function() {
+      let filter = new RegExp(this.searchValue, 'i');
+      return this.moviesList.filter(movie=>movie.original_title.match(filter));
+      console.log(moviesList)
+    }
+  },
+  mixins: [ApiMovies]
 };
 </script>
 

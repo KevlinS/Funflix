@@ -5,15 +5,10 @@ export default {
                 .then(res => res.json())
         },
         getMoviesPopular() {
-
-
             return fetch('https://api.themoviedb.org/3/movie/popular?api_key=9dcb183679039b039c527c347b054639&language=en-US&page=1')
                 .then(res => res.json())
-
         },
         getMoviesTopRated() {
-
-
             return fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=9dcb183679039b039c527c347b054639&language=en-US&page=1')
                 .then(res => res.json())
         },
