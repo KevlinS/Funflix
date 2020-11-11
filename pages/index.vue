@@ -6,7 +6,7 @@
       <h2>Results</h2>
       <ul>    
         <li v-for="movie in moviesList" :key="movie.id">
-          <NuxtLink :to="{name: 'MovieDetail', params: { id:movie.id } }" >
+          <NuxtLink :to="`/detail/${movie.id}`" >
           <p>{{movie.id}}</p>
           <p>{{movie.original_title}}</p>
           <img :src="imgURL + movie.poster_path" />
@@ -33,11 +33,13 @@ export default {
       imgURL: "https://image.tmdb.org/t/p/w92"
     };
   },
-   methods: {
+  props: {
+    movieObject: Object
+  },
+  methods: {
       
   },
   computed: {
-    
     filteredMovie: function() {
       let filter = new RegExp(this.searchValue, 'i');
       return this.moviesList.filter(movie=>movie.original_title.match(filter));
