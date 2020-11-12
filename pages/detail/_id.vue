@@ -1,4 +1,5 @@
 <template>
+
   <div class="movie_detail">
     <p>{{ movie.original_title }}</p>
     <img :src="imgURL + movie.poster_path" />
@@ -14,16 +15,13 @@
 </template>
 
 <script>
-import TitlePage from "../../components/TitlePage";
 import ApiMovies from "../../mixins/ApiMovies";
 import Button from "../../components/Button";
 import Movie from "../../mixins/Movie";
-import Vuex from "vuex";
-import axios from "axios";
+
 
 export default {
   components: {
-    TitlePage,
     Button,
   },
 

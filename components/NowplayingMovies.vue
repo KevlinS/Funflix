@@ -1,14 +1,14 @@
 <template>
   <div class="nowplaying_movies">
     <h1>NOW PLAYING</h1>
-    
+    <ul>
     <li v-for="movie in moviesList" :key="movie.id">
        <NuxtLink :to="`/detail?id=${movie.id}`" >
+       <img :src="imgURL + movie.poster_path" />
       <p>{{ movie.original_title }}</p>
-      <img :src="imgURL + movie.poster_path" />
       </NuxtLink>
     </li>
-   
+   </ul>
   </div>
 </template>
 
@@ -32,5 +32,17 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style>
+.nowplaying_movies ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style-type:none;
+}
+
+.nowplaying_movies li {
+  flex-basis: 25%;
+  margin-bottom: 25px;
+}
 </style>

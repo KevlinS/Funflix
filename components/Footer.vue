@@ -1,19 +1,28 @@
 <template>
-  <div class="footer">
-    <footer class="page-footer font-small blue">
-      <!-- Copyright -->
-      <div class="footer-copyright text-center py-3">
-        © 2020 CopyrightFUNFLIX
-      </div>
-      <!-- Copyright -->
-    </footer>
-    <!-- Footer -->
-  </div>
+   <!-- Footer -->
+  <footer class="bottom-footer">
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">
+      © 2020 Copyright Funflix
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+<!-- Footer -->
 </template>
 
 <script>
+import plugin from "../plugins/bootstrap-vue"
 export default {};
 </script>
 
-<style lang="scss" scoped>
+<style>
+.bottom-footer{
+ position: fixed;
+   bottom:0;
+   width:100%;
+   height:60px;   /* Height of the footer */
+   background:rgb(51, 66, 73)
+
+}
 </style>

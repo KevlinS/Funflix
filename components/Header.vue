@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
   <NuxtLink class="navbar-brand" to="/">FUNFLIX</NuxtLink>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -18,10 +18,11 @@
           Dropdown
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a href="/#topratedmovies">Section One</a>
+          <NuxtLink class="dropdown-item" to="/#nowplayingmovies">Now Playing</NuxtLink>
+          <NuxtLink class="dropdown-item" to="/#upcomingmovies">Upcoming</NuxtLink>
+          <NuxtLink class="dropdown-item" to="/#popularmovies">Popular</NuxtLink>
+          <NuxtLink class="dropdown-item" to="/#topratedmovies">Top Rated</NuxtLink>
         </div>
       </li>
     </ul>
@@ -45,10 +46,10 @@ export default {
       imgURL: "https://image.tmdb.org/t/p/w92",
     };
   },
+
   methods: {
       submit(){
         this.$router.push("/search?searchValue="+this.searchValue);
-        console.log("ok")
       }
   },
  
@@ -56,8 +57,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-
+<style>
 
 
 </style>

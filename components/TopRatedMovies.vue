@@ -1,12 +1,14 @@
 <template>
   <div class="toprated_movies">
     <h1>TOP RATED</h1>
-    <li v-for="movie in moviesList" :key="movie.id">
-       <NuxtLink :to="`/detail?id=${movie.id}`" >
+    <ul>
+      <li v-for="movie in moviesList" :key="movie.id">
+        <NuxtLink :to="`/detail?id=${movie.id}`" >
+       <img :src="imgURL + movie.poster_path" />
       <p>{{ movie.original_title }}</p>
-      <img :src="imgURL + movie.poster_path" />
       </NuxtLink>
-    </li>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -29,5 +31,17 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style>
+.toprated_movies ul{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+.toprated_movies li{
+  flex-basis: 25%;
+  margin-bottom: 25px;
+}
 </style>

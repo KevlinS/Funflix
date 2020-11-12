@@ -1,14 +1,14 @@
 <template>
   <div class="popular_movies">
     <h1>POPULAR</h1>
-    
-    <li v-for="movie in moviesList" :key="movie.id" >
-       <NuxtLink :to="`/detail?id=${movie.id}`" >
+    <ul>
+      <li v-for="movie in moviesList" :key="movie.id">
+         <NuxtLink :to="`/detail?id=${movie.id}`" >
+       <img :src="imgURL + movie.poster_path" />
       <p>{{ movie.original_title }}</p>
-      <img :src="imgURL + movie.poster_path" />
       </NuxtLink>
-      
-    </li>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -26,12 +26,23 @@ export default {
     this.getMoviesPopular().then((res) => {
       this.moviesList = res.results;
     });
-    
   },
-  
-  mixins: [ApiMovies]
+
+  mixins: [ApiMovies],
 };
 </script>
 
-<style lang="scss" scoped>
+<style>
+.popular_movies ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+.popular_movies li {
+  flex-basis: 25%;
+  margin-bottom: 25px;
+}
 </style>

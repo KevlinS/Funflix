@@ -1,9 +1,14 @@
 <template>
+<html>
   <div>
     <Header/>
-    <Nuxt />
+    <div class="container">
+      <Nuxt />
+    </div>
+    
     <Footer/>
   </div>
+  </html>
 </template>
 
 <style>
@@ -24,6 +29,19 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  background-color: #35495e;
+  scroll-behavior: smooth;
+  
+}
+
+.container{
+  margin-top: 55px;
+  margin-bottom: 70px;
+}
+
+/* .container{
+  margin-top: 55px;
+  margin-bottom: 70px;
 }
 
 *,
@@ -60,5 +78,5 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
-}
+} */
 </style>
