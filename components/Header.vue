@@ -35,6 +35,7 @@
 
 <script>
 import ApiMovies from "../mixins/ApiMovies";
+import search from "../pages/search";
 
 export default {
   data: function () {
@@ -44,10 +45,10 @@ export default {
       imgURL: "https://image.tmdb.org/t/p/w92",
     };
   },
-  
   methods: {
       submit(){
-        this.$router.push({ path: "/search?searchValue="+this.searchValue});
+        this.$router.push("/search?searchValue="+this.searchValue);
+        console.log("ok")
       }
   },
  
