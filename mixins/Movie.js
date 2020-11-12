@@ -12,11 +12,12 @@ export default {
                 (el) => el.id === movieObject.id
             );
             if(indexOfExistingMovie !== -1) {
-                alert("already")
+                alert("This movie is already on your list")
             }
             else {
                 movieBD.push(movieObject)
-                console.log("succes")
+                alert("Success")
+                console.log("success")
             }
 
             localStorage.setItem('wishlists', JSON.stringify(movieBD));

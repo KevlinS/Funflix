@@ -3,7 +3,7 @@
     <h1>NOW PLAYING</h1>
     
     <li v-for="movie in moviesList" :key="movie.id">
-      <NuxtLink :to="`/detail/${movie.id}`" >
+       <NuxtLink :to="`/detail?id=${movie.id}`" >
       <p>{{ movie.original_title }}</p>
       <img :src="imgURL + movie.poster_path" />
       </NuxtLink>
@@ -22,9 +22,7 @@ export default {
       imgURL: "https://image.tmdb.org/t/p/w200",
     };
   },
-  props: {
-    movieObject: Object,
-  },
+
   created() {
     this.getMoviesNowPlaying().then((res) => {
       this.moviesList = res.results;

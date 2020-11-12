@@ -2,7 +2,7 @@
   <div class="upcoming_movies">
     <h1>UPCOMING</h1>
     <li v-for="movie in moviesList" :key="movie.id">
-      <NuxtLink :to="`/detail/${movie.id}`" >
+      <NuxtLink :to="`/detail?id=${movie.id}`" >
       <p>{{ movie.original_title }}</p>
       <img :src="imgURL + movie.poster_path" />
       </NuxtLink>

@@ -1,19 +1,5 @@
 <template>
   <div class="container">
-    <div class="search_movie">
-      <input type="text" name="searchValue" v-model="searchValue">
-      
-      <h2>Results</h2>
-      <ul>    
-        <li v-for="movie in moviesList" :key="movie.id">
-          <NuxtLink :to="`/detail/${movie.id}`" >
-          <p>{{movie.id}}</p>
-          <p>{{movie.original_title}}</p>
-          <img :src="imgURL + movie.poster_path" />
-          </NuxtLink>
-        </li>
-      </ul>
-    </div>
     <NowplayingMovies />
     <UpcomingMovies />
     <PopularMovies />
@@ -28,37 +14,10 @@ import ApiMovies from "../mixins/ApiMovies";
 export default {
   data: function () {
     return {
-      moviesList: [],
-      searchValue: "",
-      imgURL: "https://image.tmdb.org/t/p/w92"
     };
-  },
-  props: {
-    movieObject: Object
   },
   methods: {
       
-  },
-  computed: {
-    filteredMovie: function() {
-      let filter = new RegExp(this.searchValue, 'i');
-      return this.moviesList.filter(movie=>movie.original_title.match(filter));
-      console.log(moviesList)
-    }
-  },
-  
-  updated() {
-    fetch(`https://api.themoviedb.org/3/search/movie?api_key=9dcb183679039b039c527c347b054639&query=${this.searchValue}`)
-    .then(res => res.json())
-    .then((res) => {
-    this.moviesList = res.results;
-    }).catch(err=> console.log(err))
-  },
-  watch: {
-    searchValue: function(newValue, oldValue) {
-      console.log("newVamie", newValue);
-      console.log("oldValue", oldValue);
-    }
   },
 
   mixins: [ApiMovies]

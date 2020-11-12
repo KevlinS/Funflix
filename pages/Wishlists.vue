@@ -3,9 +3,11 @@
         <Button btnTitle="Delete All Movies" :btnFunction="clearAllMovies"/>
         <ul>
             <li v-for="movie in movieArray" :key="movie.id">
-                {{movie.id}}
-                {{movie.original_title}}
-                <img :src="imgURL + movie.poster_path" />
+                <NuxtLink :to="`/detail?id=${movie.id}`" >
+      <p>{{ movie.original_title }}</p>
+      <img :src="imgURL + movie.poster_path" />
+      </NuxtLink>
+                
             </li>
         </ul>
     </div>
