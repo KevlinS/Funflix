@@ -29,13 +29,13 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  background-color: #35495e;
+  background-color: #080808;
   scroll-behavior: smooth;
   
 }
 
 .container{
-  margin-top: 55px;
+  margin-top: 70px;
   margin-bottom: 70px;
 }
 

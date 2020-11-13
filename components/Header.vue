@@ -13,18 +13,6 @@
       <li class="nav-item">
         <NuxtLink class="nav-link" to="wishlists">My List</NuxtLink>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a href="/#topratedmovies">Section One</a>
-          <NuxtLink class="dropdown-item" to="/#nowplayingmovies">Now Playing</NuxtLink>
-          <NuxtLink class="dropdown-item" to="/#upcomingmovies">Upcoming</NuxtLink>
-          <NuxtLink class="dropdown-item" to="/#popularmovies">Popular</NuxtLink>
-          <NuxtLink class="dropdown-item" to="/#topratedmovies">Top Rated</NuxtLink>
-        </div>
-      </li>
     </ul>
    <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" name="searchValue" type="search" placeholder="Search" aria-label="Search" v-model="searchValue">
@@ -58,6 +46,8 @@ export default {
 </script>
 
 <style>
-
+.bg-dark {
+    background-color: #000000 !important;
+}
 
 </style>

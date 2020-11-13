@@ -1,8 +1,9 @@
 <template>
 
   <div class="movie_detail">
-    <p>{{ movie.original_title }}</p>
     <img :src="imgURL + movie.poster_path" />
+    <p>{{ movie.original_title }}</p>
+    <p>{{ movie.overview}} </p>
     <Button btnTitle="add movie" :btnFunction="() => addToWishlists(movie)" />
     <button
       class="btn btn-outline-success my-2 my-sm-0"
@@ -50,5 +51,9 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style>
+.movie_detail p{
+  color: rgb(245, 237, 237);
+  text-decoration: none;
+}
 </style>

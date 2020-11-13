@@ -34,6 +34,16 @@ export default {
 </script>
 
 <style>
+.upcoming_movies h1{
+  color: rgb(245, 237, 237);
+  font-weight: bold;
+  margin-left: 35px;
+}
+
+.upcoming_movies ul li a{
+  color: rgb(245, 237, 237);
+  text-decoration: none;
+}
 .upcoming_movies ul {
   display: flex;
   flex-direction: row;

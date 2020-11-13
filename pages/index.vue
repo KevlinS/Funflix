@@ -1,17 +1,7 @@
 <template>
 
   <div class="d-flex" id="wrapper" >
-     <!-- Sidebar -->
-    <div class="bg-light border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading">Funflix</div>
-      <div class="list-group list-group-flush">
-          <NuxtLink class="list-group-item list-group-item-action bg-light" to="/#nowplayingmovies">Now Playing</NuxtLink>
-          <NuxtLink class="list-group-item list-group-item-action bg-light" to="/#upcomingmovies">Upcoming</NuxtLink>
-          <NuxtLink class="list-group-item list-group-item-action bg-light" to="/#popularmovies">Popular</NuxtLink>
-          <NuxtLink class="list-group-item list-group-item-action bg-light" to="/#topratedmovies">Top Rated</NuxtLink>
-      </div>
-    </div>
-    <!-- /#sidebar-wrapper -->
+      <Sidebar />
     <div id="page-content-wrapper">
       <div id="nowplayingmovies">
       <NowplayingMovies />
@@ -34,13 +24,19 @@
 
 <script>
 import ApiMovies from "../mixins/ApiMovies";
-
+import Sidebar from "../components/Sidebar"
+import NowplayingMovies from "../components/NowplayingMovies"
+import UpcomingMovies from "../components/UpcomingMovies"
+import PopularMovies from "../components/PopularMovies"
+import TopRatedMovies from "../components/TopRatedMovies"
 
 export default {
-  data: function () {
-    return {
-      
-    };
+  components: {
+    Sidebar,
+    NowplayingMovies,
+    UpcomingMovies,
+    PopularMovies,
+    TopRatedMovies
   },
   methods: {
     

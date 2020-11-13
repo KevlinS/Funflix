@@ -1,26 +1,13 @@
 <template>
-  <div >
-      <ul>
-        <li v-for="movie in moviesList" :key="movie.id">
-           <NuxtLink :to="`/detail?id=${movie.id}`" >
-      <p>{{ movie.original_title }}</p>
-      <img :src="imgURL + movie.poster_path" />
-      </NuxtLink>
-        </li>
-      </ul>
-    <!-- <div v-if="moviesList.length === 0">
-        <h1>Sorry. We Couldn't Find Any Movies.</h1>
-    </div>
-    <div v-else>
-      <ul>
-        <li v-for="movie in moviesList" :key="movie.id">
-           <NuxtLink :to="`/detail?id=${movie.id}`" >
-      <p>{{ movie.original_title }}</p>
-      <img :src="imgURL + movie.poster_path" />
-      </NuxtLink>
-        </li>
-      </ul>
-    </div> -->
+  <div class="search">
+    <ul>
+      <li v-for="movie in moviesList" :key="movie.id">
+        <NuxtLink :to="`/detail?id=${movie.id}`">
+          <img :src="imgURL + movie.poster_path" />
+          <p>{{ movie.original_title }}</p>
+        </NuxtLink>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -38,9 +25,7 @@ export default {
       moviesList: [],
     };
   },
-  methods: {
-    
-  },
+  methods: {},
   created() {
     fetch(
       `https://api.themoviedb.org/3/search/movie?api_key=9dcb183679039b039c527c347b054639&query=${this.$route.query.searchValue}`
@@ -50,10 +35,25 @@ export default {
         this.moviesList = res.results;
       })
       .catch((err) => console.log(err));
-    
   },
 };
 </script>
 
-<style lang="scss" scoped>
+<style>
+.search ul li a {
+  color: rgb(245, 237, 237);
+  text-decoration: none;
+}
+.search ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+.search li {
+  flex-basis: 20%;
+  margin-bottom: 25px;
+}
 </style>

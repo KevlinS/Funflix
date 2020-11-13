@@ -32,6 +32,16 @@ export default {
 </script>
 
 <style>
+.toprated_movies h1{
+  color: rgb(245, 237, 237);
+  font-weight: bold;
+  margin-left: 35px;
+}
+
+.toprated_movies ul li a{
+  color: rgb(245, 237, 237);
+  text-decoration: none;
+}
 .toprated_movies ul{
   display: flex;
   flex-direction: row;
