@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button @click.prevent="btnFunction">
+        <button class="btn btn-outline-success my-2 my-sm-0" @click.prevent="btnFunction">
             {{btnTitle}}
         </button>
     </div>

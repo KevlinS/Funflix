@@ -1,4 +1,5 @@
 export default {
+    
     methods: {
         addToWishlists(movie) {
             let movieBD = JSON.parse(localStorage.getItem('wishlists')) || [];
@@ -12,11 +13,15 @@ export default {
                 (el) => el.id === movieObject.id
             );
             if(indexOfExistingMovie !== -1) {
-                alert("This movie is already on your list")
+                this.$alert("This movie is already on your list","","warning")
             }
             else {
                 movieBD.push(movieObject)
-                alert("Success")
+                this.$alert(
+                    "",
+                    "Success",
+                    "success"
+                  ).then(() => console.log("Closed"));
                 console.log("success")
             }
 
@@ -37,10 +42,12 @@ export default {
 
             if(movieDB.length > 1) {
                 movieDB.splice(indexOfExistingMovie, 1)
+                location.reload();
                 console.log("sup")
             }
             else {
                 movieDB = []
+                location.reload();
             }
             localStorage.setItem('wishlists', JSON.stringify(movieDB));
         }
