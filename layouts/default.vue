@@ -38,7 +38,9 @@ html {
   margin-top: 70px;
   margin-bottom: 70px;
 }
-
+#__layout {
+  background-color: #080808;
+}
 /* .container{
   margin-top: 55px;
   margin-bottom: 70px;
