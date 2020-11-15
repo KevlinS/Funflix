@@ -19,7 +19,7 @@ export default {
   data: function () {
     return {
       moviesList: [],
-      imgURL: "https://image.tmdb.org/t/p/w200",
+      //imgURL: "https://image.tmdb.org/t/p/w200",
     };
   },
   created() {
