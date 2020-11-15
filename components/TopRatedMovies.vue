@@ -22,11 +22,29 @@ export default {
       imgURL: "https://image.tmdb.org/t/p/w200",
     };
   },
-  created() {
-    this.getMoviesTopRated().then((res) => {
+  methods: {
+     
+    setMoviesSlider(state, data){
+        state.moviesList = data;
+    },
+  },
+   
+  async created() {
+      await this.$axios.$get('/movie/top_rated?api_key=9dcb183679039b039c527c347b054639')
+      .then((res) => {
       this.moviesList = res.results;
     });
   },
+  
+     
+
+ 
+  // created() {
+  //    this.fetchMoviesSlider()
+  //   // this.getMoviesTopRated().then((res) => {
+  //   //   this.moviesList = res.results;
+  //   // });
+  // },
   mixins: [ApiMovies],
 };
 </script>

@@ -20,5 +20,6 @@ export default {
             return fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=9dcb183679039b039c527c347b054639&language=en-US`)
             .then(res => res.json())
         }
+      
     }
 }

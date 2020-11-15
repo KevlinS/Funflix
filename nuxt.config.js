@@ -42,6 +42,9 @@ export default {
     '@nuxtjs/axios',
 
   ],
+  axios: {
+    baseURL: 'https://api.themoviedb.org/3'
+},
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
