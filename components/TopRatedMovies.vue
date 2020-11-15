@@ -16,19 +16,19 @@
 import ApiMovies from "../mixins/ApiMovies";
 
 export default {
-  data: function () {
-    return {
-      moviesList: [],
-      //imgURL: "https://image.tmdb.org/t/p/w200",
-    };
-  },
-  created() {
-    this.getMoviesTopRated().then((res) => {
-      this.moviesList = res.results;
-    });
-  },
-  mixins: [ApiMovies],
-};
+//   data: function () {
+//     return {
+//       moviesList: [],
+//       imgURL: "https://image.tmdb.org/t/p/w200",
+//     };
+//   },
+//   created() {
+//     this.getMoviesTopRated().then((res) => {
+//       this.moviesList = res.results;
+//     });
+//   },
+//   mixins: [ApiMovies],
+// };
 </script>
 
 <style>
