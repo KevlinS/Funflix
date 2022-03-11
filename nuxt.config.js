@@ -53,8 +53,9 @@ export default {
     API_URL_NOWPLAYING: process.env.API_URL_NOWPLAYING,
     API_URL_POPULAR: process.env.API_URL_POPULAR,
     API_URL_TOPRATED: process.env.API_URL_TOPRATED,
-    API_URL_UPCOMING: process.env.API_URL_UPCOMING
-
+    API_URL_UPCOMING: process.env.API_URL_UPCOMING,
+    API_URL_MOVIE: process.env.API_URL_MOVIE,
+    API_KEY: process.env.API_KEY
   }
 
 }
