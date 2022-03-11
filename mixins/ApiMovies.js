@@ -1,7 +1,7 @@
 export default {
     methods: {
         getMoviesNowPlaying() {
-            return fetch('https://api.themoviedb.org/3/movie/now_playing?api_key=9dcb183679039b039c527c347b054639&language=en-US&page=')
+            return fetch(process.env.API_URL_NOWPLAYING)
                 .then(res => res.json())
         },
         getMoviesPopular() {
