@@ -14,10 +14,9 @@
         <NuxtLink class="nav-link" to="wishlists">My List</NuxtLink>
       </li>
     </ul>
-   <form class="form-inline my-2 my-lg-0">
-     
+   <form v-on:submit="onSubmit()" class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" name="searchValue" type="search" placeholder="Search" aria-label="Search" v-model="searchValue">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" v-on:click="submit()">Search</button>
+      <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit" v-on:click="submit()">Search</button> -->
     </form>
   </div>
 </nav>
@@ -37,8 +36,9 @@ export default {
   },
 
   methods: {
-      submit(){
+      onSubmit(){
         this.$router.push("/search?searchValue="+this.searchValue);
+        console.log("ok")
       }
   },
  
