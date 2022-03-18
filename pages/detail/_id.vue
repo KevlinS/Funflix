@@ -3,7 +3,7 @@
   <div class="movie_detail">
     <div class="img_detail">
       <img :src="imgURL + movie.poster_path" />
-      <Button btnTitle="add movie" :btnFunction="() => addToWishlists(movie)" />
+      <Button btnTitle="add movie" :btnFunction="() => addToWishlists()" />
     </div>
     <div class="description">
     <h1>{{ movie.original_title }}</h1>
