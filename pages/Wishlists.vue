@@ -48,7 +48,7 @@ export default {
       this.movieArray = this.getMovieWishlists();
     },
   },
-  fetch() {
+  mounted() {
     this.movieArray = this.getMovieWishlists();
   },
   

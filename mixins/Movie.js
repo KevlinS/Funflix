@@ -1,7 +1,7 @@
 export default {
     
     methods: {
-        addToWishlists(movie) {
+        addToWishlists() {
             let movieBD = JSON.parse(localStorage.getItem('wishlists')) || [];
             let movieObject = {
                 id: this.movie.id,
