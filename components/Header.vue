@@ -15,9 +15,9 @@
       </li>
     </ul>
    <form class="form-inline my-2 my-lg-0">
-     <NuxtLink class="nav-link" to="search">search</NuxtLink>
-      <!-- <input class="form-control mr-sm-2" name="searchValue" type="search" placeholder="Search" aria-label="Search" v-model="searchValue">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" v-on:click="submit()">Search</button> -->
+     
+      <input class="form-control mr-sm-2" name="searchValue" type="search" placeholder="Search" aria-label="Search" v-model="searchValue">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" v-on:click="submit()">Search</button>
     </form>
   </div>
 </nav>
