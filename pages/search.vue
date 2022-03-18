@@ -26,7 +26,7 @@ export default {
     };
   },
   methods: {},
-  async beforeMount() {
+  async fetch() {
     await fetch(
       `https://api.themoviedb.org/3/search/movie?api_key=9dcb183679039b039c527c347b054639&query=${this.$route.query.searchValue}`
     )
