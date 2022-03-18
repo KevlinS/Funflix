@@ -22,12 +22,12 @@ export default {
       imgURL: "https://image.tmdb.org/t/p/w200",
     };
   },
-  async created() {
-      this.movieList = await fetch(
-        'https://api.themoviedb.org/3/movie/popular?api_key=9dcb183679039b039c527c347b054639&language=en-US&page=1'
-      ).then(res => res.json())
-      .then(res => this.moviesList = res.results);
-    },
+  // async created() {
+  //     this.movieList = await fetch(
+  //       'https://api.themoviedb.org/3/movie/popular?api_key=9dcb183679039b039c527c347b054639&language=en-US&page=1'
+  //     ).then(res => res.json())
+  //     .then(res => this.moviesList = res.results);
+  //   },
 
   mixins: [ApiMovies],
 };
