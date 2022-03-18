@@ -23,11 +23,12 @@ export default {
     };
   },
 
-  async created() {
-    await fetch('https://api.themoviedb.org/3/movie/now_playing?api_key=9dcb183679039b039c527c347b054639&language=en-US&page=1')
-                .then(res => res.json()
-                .then(res => this.moviesList = res.results));
-  },
+ async fetch() {
+      this.movieList = await fetch(
+        'https://api.themoviedb.org/3/movie/now_playing?api_key=9dcb183679039b039c527c347b054639&language=en-US&page=1'
+      ).then(res => res.json())
+      .then(res => this.moviesList = res.results);
+    },
   mixins: [ApiMovies],
 };
 </script>

@@ -1,14 +1,14 @@
 <template>
   <div class="toprated_movies">
     <h1>TOP RATED</h1>
-    <ul>
+    <!-- <ul>
       <li v-for="movie in moviesList" :key="movie.id">
         <NuxtLink :to="`/detail?id=${movie.id}`" >
        <img :src="imgURL + movie.poster_path" />
       <p>{{ movie.original_title }}</p>
       </NuxtLink>
       </li>
-    </ul>
+    </ul> -->
   </div>
 </template>
 
@@ -16,25 +16,25 @@
 import ApiMovies from "../mixins/ApiMovies";
 
 export default {
-  data: function () {
-    return {
-      moviesList: [],
-      imgURL: "https://image.tmdb.org/t/p/w200",
-    };
-  },
-  methods: {
+//   data: function () {
+//     return {
+//       moviesList: [],
+//       imgURL: "https://image.tmdb.org/t/p/w200",
+//     };
+//   },
+//   methods: {
      
-    setMoviesSlider(state, data){
-        state.moviesList = data;
-    },
-  },
+//     setMoviesSlider(state, data){
+//         state.moviesList = data;
+//     },
+//   },
    
- created() {
-    this.getMoviesTopRated().then((res) => {
-      this.moviesList = res.results;
-    });
-  },
-  mixins: [ApiMovies],
+//  created() {
+//     this.getMoviesTopRated().then((res) => {
+//       this.moviesList = res.results;
+//     });
+//   },
+//   mixins: [ApiMovies],
 };
 </script>
 
