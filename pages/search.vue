@@ -26,16 +26,12 @@ export default {
     };
   },
   methods: {},
-  created() {
-    fetch(
-      `https://api.themoviedb.org/3/search/movie?api_key=9dcb183679039b039c527c347b054639&query=${this.$route.query.searchValue}`
-    )
-      .then((res) => res.json())
-      .then((res) => {
-        this.moviesList = res.results;
-      })
-      .catch((err) => console.log(err));
-  },
+  async fetch() {
+      this.movieList = await fetch(
+        'https://api.themoviedb.org/3/movie/now_playing?api_key=9dcb183679039b039c527c347b054639&language=en-US&page=1'
+      ).then(res => res.json())
+      .then(res => this.moviesList = res.results);
+    }
 };
 </script>
 
