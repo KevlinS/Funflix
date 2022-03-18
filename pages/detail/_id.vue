@@ -39,8 +39,8 @@ export default {
       console.log(this.$route.query.id);
     },
   },
-  created() {
-    fetch(
+  async fetch() {
+    await fetch(
       `https://api.themoviedb.org/3/movie/${this.$route.query.id}?api_key=9dcb183679039b039c527c347b054639&language=en-US`
     )
       .then((res) => res.json())
