@@ -37,7 +37,7 @@ export default {
 
   methods: {
       submit(){
-        this.$router.push("/search");
+        this.$router.push({path: ('search')})
       }
   },
  
