@@ -1,14 +1,14 @@
 <template>
   <div class="popular_movies">
     <h1>POPULAR</h1>
-    <!-- <ul>
+    <ul>
       <li v-for="movie in moviesList" :key="movie.id">
          <NuxtLink :to="`/detail?id=${movie.id}`" >
        <img :src="imgURL + movie.poster_path" />
       <p>{{ movie.original_title }}</p>
       </NuxtLink>
       </li>
-    </ul> -->
+    </ul>
   </div>
 </template>
 
@@ -16,19 +16,20 @@
 import ApiMovies from "../mixins/ApiMovies";
 
 export default {
-  // data: function () {
-  //   return {
-  //     moviesList: [],
-  //     imgURL: "https://image.tmdb.org/t/p/w200",
-  //   };
-  // },
-  // created() {
-  //   this.getMoviesPopular().then((res) => {
-  //     this.moviesList = res.results;
-  //   });
-  // },
+  data: function () {
+    return {
+      moviesList: [],
+      imgURL: "https://image.tmdb.org/t/p/w200",
+    };
+  },
+  async created() {
+      this.movieList = await fetch(
+        'https://api.themoviedb.org/3/movie/popular?api_key=9dcb183679039b039c527c347b054639&language=en-US&page=1'
+      ).then(res => res.json())
+      .then(res => this.moviesList = res.results);
+    },
 
-  // mixins: [ApiMovies],
+  mixins: [ApiMovies],
 };
 </script>
 
