@@ -40,14 +40,22 @@ export default {
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     '@nuxtjs/axios',
-
+    
   ],
-  axios: {
-    baseURL: process.env.BASE_URL ||'https://api.themoviedb.org/3'
-},
+//   axios: {
+//     baseURL: process.env.BASE_URL ||'https://api.themoviedb.org/3'
+// },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
   },
+  env: {
+    API_URL_NOWPLAYING: process.env.API_URL_NOWPLAYING,
+    API_URL_POPULAR: process.env.API_URL_POPULAR,
+    API_URL_TOPRATED: process.env.API_URL_TOPRATED,
+    API_URL_UPCOMING: process.env.API_URL_UPCOMING,
+    API_URL_MOVIE: process.env.API_URL_MOVIE,
+    API_KEY: process.env.API_KEY
+  }
 
 }
